@@ -3,7 +3,7 @@ from index_now import IndexNow
 
 
 def main():
-    st.title('Index Now')
+    st.title('🚀 Index Now')
 
     with st.form(key='index_form'):
         host = st.text_input('Host')
