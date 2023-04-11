@@ -13,10 +13,12 @@ def main():
 
     if submit_button:
         indexing = IndexNow(host=host, key=key)
-        status_code, response_text = indexing.index_now(urls.split('\n'))
-        # st.write(f'Status code: {status_code}')
-        # st.write('Response:')
-        # st.write(response_text)
+        status_code, response_text, reason_text = indexing.index_now(urls.split('\n'))
+        st.write(f'Status code: {status_code}')
+        st.write('Response:')
+        st.write(response_text)
+        st.write('Reason:')
+        st.write(reason_text)
 
 
 if __name__ == '__main__':
