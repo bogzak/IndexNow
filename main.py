@@ -17,8 +17,7 @@ def main():
         st.write(f'Status code: {status_code}')
         # st.write('Response:')
         # st.write(response_text)
-        st.write('Reason:')
-        st.write(reason_text)
+        st.write(f'Reason: {reason_text}')
 
 
 if __name__ == '__main__':
