@@ -33,18 +33,18 @@ class IndexNow:
         response_text = response.text
 
         if http_code == 200:
-            reason_text = "URLs successfully sent"
+            reason_text = "✅ URLs successfully sent"
         elif http_code == 202:
-            reason_text = "URLs received. Pending IndexNow key verification."
+            reason_text = "⏳ URLs received. Pending IndexNow key verification."
         elif http_code == 400:
-            reason_text = "Invalid format"
+            reason_text = "❌ Invalid format"
         elif http_code == 403:
-            reason_text = "Invalid or missing key"
+            reason_text = "🔑 Invalid or missing key"
         elif http_code == 422:
-            reason_text = "URLs does not belong to host or key does not match protocol schema"
+            reason_text = "🚫 URLs does not belong to host or key does not match protocol schema"
         elif http_code == 429:
-            reason_text = "Too many requests (potential spam)"
+            reason_text = "🚨 Too many requests (potential spam)"
         else:
-            reason_text = f"Unknown error"
+            reason_text = f"❓ Unknown error"
 
         return http_code, response_text, reason_text
