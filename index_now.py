@@ -1,5 +1,6 @@
 import requests
 import json
+import streamlit as st
 
 
 class IndexNow:
@@ -7,21 +8,19 @@ class IndexNow:
         self.host = host
         self.key = key
 
-    @staticmethod
-    def get_links():
+    def get_links(self, urls):
         links = []
-        with open(r'urls.txt', 'r', encoding='utf-8') as file:
-            for link in file:
-                links.append(link.strip())
+        for link in urls:
+            links.append(link.strip())
         return links
 
-    def index_now(self):
+    def index_now(self, urls):
         url = 'https://yandex.com/indexnow'
         data = {
             "host": self.host,
             "key": self.key,
             # "keyLocation": "https://www.example.com/myIndexNowKey63638.html",
-            "urlList": self.get_links()
+            "urlList": self.get_links(urls)
         }
 
         headers = {
@@ -30,5 +29,4 @@ class IndexNow:
 
         response = requests.post(url, data=json.dumps(data), headers=headers)
 
-        print(response.status_code)
-        print(response.text)
+        return response.status_code, response.text
