@@ -19,8 +19,8 @@ def main():
         # st.write(response_text)
         st.write(f'Reason: {reason_text}')
 
-    st.markdown('[What is IndexNow?](https://www.indexnow.org/)')
-    st.markdown('[Documentation](https://www.indexnow.org/documentation)')
+    st.markdown(':red[What is IndexNow?](https://www.indexnow.org/)')
+    st.markdown(':red[Documentation](https://www.indexnow.org/documentation)')
 
 
 if __name__ == '__main__':
