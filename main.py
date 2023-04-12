@@ -11,6 +11,8 @@ def main():
         urls = st.text_area('Enter URLs, one per line')
         submit_button = st.form_submit_button(label='Index Now')
 
+    st.text('<a href="https://www.indexnow.org/">What is IndexNow</a>')
+
     if submit_button:
         indexing = IndexNow(host=host, key=key)
         status_code, response_text, reason_text = indexing.index_now(urls.split('\n'))
