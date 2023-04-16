@@ -3,9 +3,10 @@ import json
 
 
 class IndexNow:
-    def __init__(self, host, key):
+    def __init__(self, host, key, searchengine):
         self.host = host
         self.key = key
+        self.searchengine = searchengine
 
     def get_links(self, urls):
         links = []
@@ -14,7 +15,7 @@ class IndexNow:
         return links
 
     def index_now(self, urls):
-        url = 'https://yandex.com/indexnow'
+        url = f'https://{self.searchengine}/indexnow'
         data = {
             "host": self.host,
             "key": self.key,
