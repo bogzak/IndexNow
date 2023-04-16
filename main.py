@@ -18,7 +18,7 @@ def main():
 
     # Get the user's selection from the app
     select_searchengine = st.selectbox('Select searchengine',['Yandex', 'Bing'], index=False)
-    searchengine = select_searchengine[type_mapping]
+    searchengine = type_mapping[select_searchengine]
 
     urls = st.text_area('Enter URLs, one per line')
     submit_button = st.form_submit_button(label='Index Now')
