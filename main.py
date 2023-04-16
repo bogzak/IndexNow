@@ -12,7 +12,7 @@ def main():
     }
 
     with st.form(key='index_form'):
-        host = st.text_input('Host')
+        host = st.text_input('Host', help='example.com')
 
         key = st.text_input('Key')
 
